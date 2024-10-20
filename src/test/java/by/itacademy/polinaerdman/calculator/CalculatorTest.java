@@ -11,10 +11,46 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         int a = 23;
         int b = 55;
+        int expected = 78;
 
         int actual = calculator.add(a, b);
 
-        int expected = 78;
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual, String.format("Sum not equal %d!", expected));
+    }
+
+    @Test
+    public void testSub1() {
+        Calculator calculator = new Calculator();
+        int a = 23;
+        int b = 55;
+        int expected = 32;
+
+        int actual = calculator.subtract(a, b);
+
+        Assertions.assertEquals(expected, actual, String.format("Subtract not equal %d!", expected));
+    }
+
+    @Test
+    public void testMul1() {
+        Calculator calculator = new Calculator();
+        int a = 23;
+        int b = 55;
+        int expected = 1265;
+
+        int actual = calculator.multiply(a, b);
+
+        Assertions.assertEquals(expected, actual, String.format("Multiply not equal %d!", expected));
+    }
+
+    @Test
+    public void testDiv1() throws Exception {
+        Calculator calculator = new Calculator();
+        int a = 23;
+        int b = 55;
+        int expected = 0;
+
+        int actual = calculator.divide(a, b);
+
+        Assertions.assertEquals(expected, actual, String.format("Divide not equal %d!", expected));
     }
 }
